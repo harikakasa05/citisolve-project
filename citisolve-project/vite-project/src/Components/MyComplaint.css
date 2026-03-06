@@ -1,0 +1,130 @@
+/* Page background */
+.page-bg{
+  padding:40px 60px;
+  background: linear-gradient(to bottom,#eef2f7,#dbe3ef);
+  min-height:100vh;
+}
+
+/* Title */
+.page-title{
+  text-align:center;
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.page-subtitle{
+  text-align:center;
+  color:#6b7280;
+  margin-bottom:30px;
+}
+
+/* Top controls */
+.top-controls{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:35px;
+}
+
+.filter-controls{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* Button */
+.primary-btn{
+  padding:10px 18px;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(90deg,#5b6cff,#7b3fe4);
+  color:white;
+  cursor:pointer;
+  font-weight:500;
+}
+
+/* ================= GRID ================= */
+
+.complaint-list{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr); /* EXACTLY 3 CARDS */
+  gap:30px;
+}
+
+/* Card */
+.complaint-card{
+  background:white;
+  padding:22px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.complaint-card:hover{
+  transform:translateY(-5px);
+}
+
+/* Card header */
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.complaint-id{
+  font-size:12px;
+  color:#6b7280;
+}
+
+/* Status badge */
+.status{
+  font-size:12px;
+  padding:4px 10px;
+  border-radius:20px;
+  background:#fde68a;
+  color:#92400e;
+}
+
+/* Name */
+.complaint-name{
+  font-size:20px;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+/* Row */
+.row{
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+  margin:6px 0;
+}
+
+/* Category badge */
+.category-badge{
+  background:#e0ecff;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+/* Description */
+.description{
+  margin-top:10px;
+  font-size:14px;
+  color:#444;
+}
+
+/* Delete button */
+.delete-btn{
+  margin-top:15px;
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(90deg,#5b6cff,#7b3fe4);
+  color:white;
+  cursor:pointer;
+}
