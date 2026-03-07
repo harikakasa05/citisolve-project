@@ -1,4 +1,4 @@
-export const BASE_URL = "https://citisolve-fullstack-project.onrender.com";
+export const BASE_URL = "https://citisolve-projec.onrender.com";
 
 const callAPI = async (endpoint, options = {}) => {
     try {
