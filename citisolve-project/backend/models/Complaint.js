@@ -7,10 +7,6 @@ const complaintSchema = new mongoose.Schema({
     category: String,
     description: String,
     photo: String,
-    status: {
-        type: String,
-        default: "Pending"
-    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("Complaint", complaintSchema);

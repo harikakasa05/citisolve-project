@@ -18,34 +18,14 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  try {
-    const user = req.user;   // comes from auth middleware
-
-    let complaints;
-
-    if (user.role === "admin") {
-      // admin can see everything
-      complaints = await Complaint.find().populate("userId", "name email");
-    } else {
-      // citizen sees only their complaints
-      complaints = await Complaint.find({ userId: user.id });
+    try {
+        const complaints = await Complaint.find().sort({ createdAt: -1 });
+        res.json(complaints);
+    } catch (error) {
+        console.error("Fetch Error:", error.message);
+        res.status(500).json({ message: "Error fetching complaints" });
     }
-
-    res.json(complaints);
-  } catch (error) {
-    res.status(500).json({ message: "Server Error" });
-  }
 });
-
-// router.get("/", async (req, res) => {
-//     try {
-//         const complaints = await Complaint.find().sort({ createdAt: -1 });
-//         res.status(200).json(complaints);
-//     } catch (error) {
-//         console.error("Fetch Error:", error.message);
-//         res.status(500).json({ message: "Error fetching complaints" });
-//     }
-// });
 
 router.delete("/:id", async (req, res) => {
     try {
