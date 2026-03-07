@@ -63,7 +63,7 @@ const ComplaintForm = () => {
             }
 
             alert("Complaint Submitted Successfully!");
-            navigate("/my-complaints");
+            navigate("/my-complaint");
         } catch (error) {
             console.error("Error:", error);
             alert(error.message || "Something went wrong!");
@@ -132,7 +132,7 @@ const ComplaintForm = () => {
                 <div className="button-group">
                     <button
                         type="button"
-                        onClick={() => navigate("/my-complaints")}
+                        onClick={() => navigate("/my-complaint")}
                     >
                         Cancel
                     </button>
