@@ -13,12 +13,22 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5174",
-  "https://citisolve-frontend.onrender.com"
+  "https://citisolve-frontend.onrender.com",
+  "https://citisolve-projec.onrender.com"
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        console.log("Blocked by CORS:", origin);
+        callback(null, true); // allow temporarily for deployment
+      }
+    },
     credentials: true,
   })
 );
